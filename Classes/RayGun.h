@@ -19,11 +19,12 @@
 @property (nonatomic, retain) UIImage *image;
 
 //The array of images to animate during attack
-@property (nonatomic, retain) NSArray *attackImageArray;
+@property (nonatomic, retain) NSArray *attackImages;
 
 //The array of images to animate during kill
-@property (nonatomic, retain) NSArray *killImageArray;
+@property (nonatomic, retain) NSArray *killImages;
 
 //This edits the image with the weapons kill effect
-- (UIImage *) attack:(UIImage *)img;
+- (UIImage *) finishAttack:(UIImage *)img;
+- (void) attack;
 @end

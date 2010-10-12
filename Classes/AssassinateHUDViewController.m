@@ -14,7 +14,7 @@
 
 @implementation AssassinateHUDViewController
 
-@synthesize targetPhotoView, overlay, targetImage, weaponView;
+@synthesize targetPhotoView, overlay, targetImage, weaponView, attackImageView;
 #pragma mark -
 #pragma mark ViewController lifecycle
 
@@ -82,6 +82,9 @@
     [super dealloc];
 	[camera release];
 	[overlay release];
+	[targetImage release]; 
+	[weaponView release]; 
+	[attackImageView release];	
 }
 
 #pragma mark CameraOverlay callbacks 
@@ -120,11 +123,22 @@
 }
 
 - (void) attack{
-	self.targetPhotoView.image = [currentWeapon attack:self.targetImage];
-	[self.view setNeedsDisplay];
+
+	
+	//Triggering finishAttack will have to be based on the success of the attack.
+	//For now, we'll just manually finish the Attack after the first attack attempt
+	
+	self.attackImageView.animationImages = currentWeapon.attackImages;
+	self.attackImageView.animationDuration = 0.5f;
+	self.attackImageView.animationRepeatCount = 2;
+	[self.attackImageView startAnimating];
+	
+	//[self finishAttack];
 }
 
 - (void) finishAttack{
+	self.targetPhotoView.image = [currentWeapon finishAttack:self.targetImage];
+	[self.view setNeedsDisplay];	
 }
 
 #pragma mark -

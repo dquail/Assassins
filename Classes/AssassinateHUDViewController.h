@@ -15,6 +15,7 @@
 	UIView *overlay;
 	UIImageView *targetPhotoView;
 	UIImageView *weaponView;
+	UIImageView *attackImageView;
 	
 	BOOL isTargetLocked;
 	
@@ -26,6 +27,7 @@
 @property (nonatomic, retain) IBOutlet UIView *overlay;
 @property (nonatomic, retain) IBOutlet UIImageView *targetPhotoView;
 @property (nonatomic, retain) IBOutlet UIImageView *weaponView;
+@property (nonatomic, retain) IBOutlet UIImageView *attackImageView;
 
 @property (nonatomic, retain) UIImage *targetImage;
 
