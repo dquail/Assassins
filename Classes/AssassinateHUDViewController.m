@@ -32,28 +32,28 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-    [super viewDidLoad];		
-	self.targetPhotoView.image = self.targetImage;
+    [super viewDidLoad];	
+	
+	//Hide the weapon so it doesn't flash visible while camera is being loaded
+	self.weaponView.alpha = 0.0;	
 	self.weaponView.image = currentWeapon.image;	
 	
-	if (!isTargetLocked){
-		camera  = [[UIImagePickerController alloc] init];
-		camera.sourceType =  UIImagePickerControllerSourceTypeCamera;
-		camera.delegate = self;
-		camera.allowsEditing = NO;
-		camera.showsCameraControls = NO;
-		camera.toolbarHidden = YES;
-		camera.wantsFullScreenLayout = YES;
-		camera.cameraOverlayView = self.overlay;
-	}
+	camera  = [[UIImagePickerController alloc] init];
+	camera.sourceType =  UIImagePickerControllerSourceTypeCamera;
+	camera.delegate = self;
+	camera.allowsEditing = NO;
+	camera.showsCameraControls = NO;
+	camera.toolbarHidden = YES;
+	camera.wantsFullScreenLayout = YES;
+	camera.cameraOverlayView = self.overlay;
 
 }
 
 - (void) viewDidAppear:(BOOL)animated{
-	[super viewDidAppear:animated];
-	if (!isTargetLocked	)
-		[self presentModalViewController:camera animated:YES];
 	
+	[super viewDidAppear:animated];
+	if (!isTargetLocked)
+		[self presentModalViewController:camera animated:YES];
 	
 }
 /*
@@ -109,6 +109,7 @@
 {
 	self.targetImage = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
 	self.targetPhotoView.image = self.targetImage;
+	self.weaponView.alpha = 1.0;
 	
 	[self.view setNeedsDisplay];
 	isTargetLocked = YES;
