@@ -96,6 +96,10 @@
 						<reference key="NSSuperview" ref="1040510456"/>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">Default.png</string>
+						</object>
 					</object>
 					<object class="IBUIImageView" id="449165267">
 						<reference key="NSNextResponder" ref="1040510456"/>
@@ -259,11 +263,13 @@
 						<int key="objectID">5</int>
 						<reference key="object" ref="858683985"/>
 						<reference key="parent" ref="1040510456"/>
+						<string key="objectName">Weapon</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">16</int>
 						<reference key="object" ref="878001629"/>
 						<reference key="parent" ref="1040510456"/>
+						<string key="objectName">TargetPhoto</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">24</int>
@@ -274,6 +280,7 @@
 						<int key="objectID">26</int>
 						<reference key="object" ref="449165267"/>
 						<reference key="parent" ref="1040510456"/>
+						<string key="objectName">WeaponEffect</string>
 					</object>
 				</object>
 			</object>
@@ -301,7 +308,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>AssassinateHUDViewController</string>
 					<string>UIResponder</string>
-					<string>{{748, 396}, {320, 460}}</string>
+					<string>{{519, 396}, {320, 460}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>{{519, 321}, {320, 460}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -652,8 +659,17 @@
 		<string key="IBDocument.LastKnownRelativeProjectPath">../Assassins.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">crosshairs.png</string>
-			<string key="NS.object.0">{670, 669}</string>
+			<bool key="EncodedWithXMLCoder">YES</bool>
+			<object class="NSArray" key="dict.sortedKeys">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>Default.png</string>
+				<string>crosshairs.png</string>
+			</object>
+			<object class="NSMutableArray" key="dict.values">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>{320, 480}</string>
+				<string>{670, 669}</string>
+			</object>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">123</string>
 	</data>
