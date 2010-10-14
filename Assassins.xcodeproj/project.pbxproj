@@ -22,16 +22,16 @@
 		C70065981264361100228EA8 /* RayAttack5.png in Resources */ = {isa = PBXBuildFile; fileRef = C70065911264361100228EA8 /* RayAttack5.png */; };
 		C70065991264361100228EA8 /* RayAttack6.png in Resources */ = {isa = PBXBuildFile; fileRef = C70065921264361100228EA8 /* RayAttack6.png */; };
 		C700659A1264361100228EA8 /* RayAttack7.png in Resources */ = {isa = PBXBuildFile; fileRef = C70065931264361100228EA8 /* RayAttack7.png */; };
-		C71E4A3C1263832400670FFC /* AssassinateHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C71E4A3A1263832400670FFC /* AssassinateHUDViewController.m */; };
-		C71E4A3D1263832400670FFC /* AssassinateHUDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C71E4A3B1263832400670FFC /* AssassinateHUDViewController.xib */; };
 		C71E4A411263858500670FFC /* RayGun.png in Resources */ = {isa = PBXBuildFile; fileRef = C71E4A401263858500670FFC /* RayGun.png */; };
 		C71E4A431263859400670FFC /* crosshairs.png in Resources */ = {isa = PBXBuildFile; fileRef = C71E4A421263859400670FFC /* crosshairs.png */; };
 		C71E4A6212638D7B00670FFC /* AssassinTransparent.png in Resources */ = {isa = PBXBuildFile; fileRef = C71E4A6012638D7B00670FFC /* AssassinTransparent.png */; };
 		C71E4A6312638D7B00670FFC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C71E4A6112638D7B00670FFC /* Default.png */; };
 		C71E4A6A12638E8800670FFC /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C71E4A6912638E8800670FFC /* Icon.png */; };
-		C71E4BA81263B24900670FFC /* RayGun.m in Sources */ = {isa = PBXBuildFile; fileRef = C71E4BA71263B24900670FFC /* RayGun.m */; };
-		C71E4BFE1263BEC600670FFC /* ImageHelper-ImageProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = C71E4BFB1263BEC600670FFC /* ImageHelper-ImageProcessing.m */; };
-		C71E4BFF1263BEC600670FFC /* ImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C71E4BFD1263BEC600670FFC /* ImageHelper.m */; };
+		C76E6EF71266C94300B48793 /* AssassinateHUDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C76E6EF51266C94300B48793 /* AssassinateHUDViewController.m */; };
+		C76E6EF81266C94300B48793 /* AssassinateHUDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C76E6EF61266C94300B48793 /* AssassinateHUDViewController.xib */; };
+		C76E6EFD1266CA0700B48793 /* ImageHelper-ImageProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = C76E6EFA1266CA0700B48793 /* ImageHelper-ImageProcessing.m */; };
+		C76E6EFE1266CA0700B48793 /* ImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C76E6EFC1266CA0700B48793 /* ImageHelper.m */; };
+		C76E6F021266CA5900B48793 /* RayGun.m in Sources */ = {isa = PBXBuildFile; fileRef = C76E6F001266CA5900B48793 /* RayGun.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,21 +55,21 @@
 		C70065911264361100228EA8 /* RayAttack5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RayAttack5.png; path = Images/Weapons/RayGun/RayAttack5.png; sourceTree = "<group>"; };
 		C70065921264361100228EA8 /* RayAttack6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RayAttack6.png; path = Images/Weapons/RayGun/RayAttack6.png; sourceTree = "<group>"; };
 		C70065931264361100228EA8 /* RayAttack7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RayAttack7.png; path = Images/Weapons/RayGun/RayAttack7.png; sourceTree = "<group>"; };
-		C71E4A391263832400670FFC /* AssassinateHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssassinateHUDViewController.h; sourceTree = "<group>"; };
-		C71E4A3A1263832400670FFC /* AssassinateHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssassinateHUDViewController.m; sourceTree = "<group>"; };
-		C71E4A3B1263832400670FFC /* AssassinateHUDViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssassinateHUDViewController.xib; sourceTree = "<group>"; };
 		C71E4A401263858500670FFC /* RayGun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RayGun.png; path = Images/Weapons/RayGun/RayGun.png; sourceTree = "<group>"; };
 		C71E4A421263859400670FFC /* crosshairs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = crosshairs.png; path = Images/Weapons/crosshairs.png; sourceTree = "<group>"; };
 		C71E4A6012638D7B00670FFC /* AssassinTransparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AssassinTransparent.png; path = Images/Application/AssassinTransparent.png; sourceTree = "<group>"; };
 		C71E4A6112638D7B00670FFC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Images/Application/Default.png; sourceTree = "<group>"; };
 		C71E4A6912638E8800670FFC /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Images/Application/Icon.png; sourceTree = "<group>"; };
-		C71E4BA31263B09400670FFC /* Weapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weapon.h; sourceTree = "<group>"; };
-		C71E4BA61263B24900670FFC /* RayGun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RayGun.h; sourceTree = "<group>"; };
-		C71E4BA71263B24900670FFC /* RayGun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RayGun.m; sourceTree = "<group>"; };
-		C71E4BFA1263BEC600670FFC /* ImageHelper-ImageProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ImageHelper-ImageProcessing.h"; sourceTree = "<group>"; };
-		C71E4BFB1263BEC600670FFC /* ImageHelper-ImageProcessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ImageHelper-ImageProcessing.m"; sourceTree = "<group>"; };
-		C71E4BFC1263BEC600670FFC /* ImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHelper.h; sourceTree = "<group>"; };
-		C71E4BFD1263BEC600670FFC /* ImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageHelper.m; sourceTree = "<group>"; };
+		C76E6EF41266C94300B48793 /* AssassinateHUDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AssassinateHUDViewController.h; path = ViewControllers/AssassinateHUDViewController.h; sourceTree = "<group>"; };
+		C76E6EF51266C94300B48793 /* AssassinateHUDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AssassinateHUDViewController.m; path = ViewControllers/AssassinateHUDViewController.m; sourceTree = "<group>"; };
+		C76E6EF61266C94300B48793 /* AssassinateHUDViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AssassinateHUDViewController.xib; path = ViewControllers/AssassinateHUDViewController.xib; sourceTree = "<group>"; };
+		C76E6EF91266CA0700B48793 /* ImageHelper-ImageProcessing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ImageHelper-ImageProcessing.h"; path = "Helpers/ImageHelper-ImageProcessing.h"; sourceTree = "<group>"; };
+		C76E6EFA1266CA0700B48793 /* ImageHelper-ImageProcessing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ImageHelper-ImageProcessing.m"; path = "Helpers/ImageHelper-ImageProcessing.m"; sourceTree = "<group>"; };
+		C76E6EFB1266CA0700B48793 /* ImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageHelper.h; path = Helpers/ImageHelper.h; sourceTree = "<group>"; };
+		C76E6EFC1266CA0700B48793 /* ImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageHelper.m; path = Helpers/ImageHelper.m; sourceTree = "<group>"; };
+		C76E6EFF1266CA5900B48793 /* RayGun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RayGun.h; path = Models/Weapons/RayGun.h; sourceTree = "<group>"; };
+		C76E6F001266CA5900B48793 /* RayGun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RayGun.m; path = Models/Weapons/RayGun.m; sourceTree = "<group>"; };
+		C76E6F011266CA5900B48793 /* Weapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Weapon.h; path = Models/Weapons/Weapon.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,9 +171,9 @@
 		C71E4A371263828000670FFC /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C71E4A391263832400670FFC /* AssassinateHUDViewController.h */,
-				C71E4A3A1263832400670FFC /* AssassinateHUDViewController.m */,
-				C71E4A3B1263832400670FFC /* AssassinateHUDViewController.xib */,
+				C76E6EF41266C94300B48793 /* AssassinateHUDViewController.h */,
+				C76E6EF51266C94300B48793 /* AssassinateHUDViewController.m */,
+				C76E6EF61266C94300B48793 /* AssassinateHUDViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -214,9 +214,9 @@
 		C71E4BA21263B07D00670FFC /* Weapons */ = {
 			isa = PBXGroup;
 			children = (
-				C71E4BA31263B09400670FFC /* Weapon.h */,
-				C71E4BA61263B24900670FFC /* RayGun.h */,
-				C71E4BA71263B24900670FFC /* RayGun.m */,
+				C76E6EFF1266CA5900B48793 /* RayGun.h */,
+				C76E6F001266CA5900B48793 /* RayGun.m */,
+				C76E6F011266CA5900B48793 /* Weapon.h */,
 			);
 			name = Weapons;
 			sourceTree = "<group>";
@@ -224,10 +224,10 @@
 		C71E4BF91263BEB600670FFC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				C71E4BFA1263BEC600670FFC /* ImageHelper-ImageProcessing.h */,
-				C71E4BFB1263BEC600670FFC /* ImageHelper-ImageProcessing.m */,
-				C71E4BFC1263BEC600670FFC /* ImageHelper.h */,
-				C71E4BFD1263BEC600670FFC /* ImageHelper.m */,
+				C76E6EF91266CA0700B48793 /* ImageHelper-ImageProcessing.h */,
+				C76E6EFA1266CA0700B48793 /* ImageHelper-ImageProcessing.m */,
+				C76E6EFB1266CA0700B48793 /* ImageHelper.h */,
+				C76E6EFC1266CA0700B48793 /* ImageHelper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -283,7 +283,6 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				2899E5220DE3E06400AC0155 /* AssassinsViewController.xib in Resources */,
-				C71E4A3D1263832400670FFC /* AssassinateHUDViewController.xib in Resources */,
 				C71E4A411263858500670FFC /* RayGun.png in Resources */,
 				C71E4A431263859400670FFC /* crosshairs.png in Resources */,
 				C71E4A6212638D7B00670FFC /* AssassinTransparent.png in Resources */,
@@ -296,6 +295,7 @@
 				C70065981264361100228EA8 /* RayAttack5.png in Resources */,
 				C70065991264361100228EA8 /* RayAttack6.png in Resources */,
 				C700659A1264361100228EA8 /* RayAttack7.png in Resources */,
+				C76E6EF81266C94300B48793 /* AssassinateHUDViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,10 +309,10 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AssassinsAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* AssassinsViewController.m in Sources */,
-				C71E4A3C1263832400670FFC /* AssassinateHUDViewController.m in Sources */,
-				C71E4BA81263B24900670FFC /* RayGun.m in Sources */,
-				C71E4BFE1263BEC600670FFC /* ImageHelper-ImageProcessing.m in Sources */,
-				C71E4BFF1263BEC600670FFC /* ImageHelper.m in Sources */,
+				C76E6EF71266C94300B48793 /* AssassinateHUDViewController.m in Sources */,
+				C76E6EFD1266CA0700B48793 /* ImageHelper-ImageProcessing.m in Sources */,
+				C76E6EFE1266CA0700B48793 /* ImageHelper.m in Sources */,
+				C76E6F021266CA5900B48793 /* RayGun.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
