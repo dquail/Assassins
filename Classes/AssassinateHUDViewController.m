@@ -108,7 +108,8 @@
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
 	self.targetImage = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-
+	self.targetPhotoView.image = self.targetImage;
+	
 	[self.view setNeedsDisplay];
 	isTargetLocked = YES;
 	[self dismissModalViewControllerAnimated:YES];
