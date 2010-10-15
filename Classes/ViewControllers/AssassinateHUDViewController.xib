@@ -13,7 +13,6 @@
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<integer value="14"/>
-			<integer value="1"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -48,6 +47,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{95, 134}, {131, 116}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -78,6 +78,7 @@
 				</object>
 				<string key="NSFrameSize">{320, 460}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MCAwAA</bytes>
@@ -104,7 +105,7 @@
 					<object class="IBUIImageView" id="449165267">
 						<reference key="NSNextResponder" ref="1040510456"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrameSize">{320, 460}</string>
+						<string key="NSFrameSize">{320, 480}</string>
 						<reference key="NSSuperview" ref="1040510456"/>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -116,6 +117,10 @@
 						<reference key="NSSuperview" ref="1040510456"/>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<object class="NSCustomResource" key="IBUIImage">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">RayGun.png</string>
+						</object>
 					</object>
 					<object class="IBUIButton" id="354331316">
 						<reference key="NSNextResponder" ref="1040510456"/>
@@ -135,6 +140,14 @@
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="795365678"/>
+					</object>
+					<object class="IBUIImageView" id="1053613503">
+						<reference key="NSNextResponder" ref="1040510456"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrameSize">{320, 480}</string>
+						<reference key="NSSuperview" ref="1040510456"/>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 				</object>
 				<string key="NSFrameSize">{320, 460}</string>
@@ -210,6 +223,14 @@
 					</object>
 					<int key="connectionID">27</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">killView</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1053613503"/>
+					</object>
+					<int key="connectionID">30</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -228,7 +249,7 @@
 							<reference ref="168671849"/>
 						</object>
 						<reference key="parent" ref="0"/>
-						<string key="objectName">Overlay</string>
+						<string key="objectName">TargetOverlay</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">-1</int>
@@ -255,9 +276,10 @@
 							<reference ref="858683985"/>
 							<reference ref="354331316"/>
 							<reference ref="449165267"/>
+							<reference ref="1053613503"/>
 						</object>
 						<reference key="parent" ref="0"/>
-						<string key="objectName">AttackView</string>
+						<string key="objectName">AttackOverlay</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">5</int>
@@ -282,6 +304,12 @@
 						<reference key="parent" ref="1040510456"/>
 						<string key="objectName">WeaponEffect</string>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">29</int>
+						<reference key="object" ref="1053613503"/>
+						<reference key="parent" ref="1040510456"/>
+						<string key="objectName">KillOverlay</string>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -299,6 +327,8 @@
 					<string>24.IBPluginDependency</string>
 					<string>26.IBPluginDependency</string>
 					<string>26.IBViewBoundsToFrameTransform</string>
+					<string>29.IBPluginDependency</string>
+					<string>29.IBViewBoundsToFrameTransform</string>
 					<string>4.IBPluginDependency</string>
 					<string>4.IBViewBoundsToFrameTransform</string>
 					<string>5.IBPluginDependency</string>
@@ -320,6 +350,10 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
 						<bytes key="NSTransformStruct">P4AAAL+AAABByAAAwzoAAA</bytes>
+					</object>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<object class="NSAffineTransform">
+						<bytes key="NSTransformStruct">AUIgAABDJgAAA</bytes>
 					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
@@ -347,7 +381,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">27</int>
+			<int key="maxID">30</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -393,6 +427,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>attackImageView</string>
 							<string>currentWeapon</string>
+							<string>killView</string>
 							<string>overlay</string>
 							<string>targetPhotoView</string>
 							<string>weaponView</string>
@@ -401,6 +436,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UIImageView</string>
 							<string>id</string>
+							<string>UIImageView</string>
 							<string>UIView</string>
 							<string>UIImageView</string>
 							<string>UIImageView</string>
@@ -412,6 +448,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>attackImageView</string>
 							<string>currentWeapon</string>
+							<string>killView</string>
 							<string>overlay</string>
 							<string>targetPhotoView</string>
 							<string>weaponView</string>
@@ -425,6 +462,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">currentWeapon</string>
 								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">killView</string>
+								<string key="candidateClassName">UIImageView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">overlay</string>
@@ -442,7 +483,7 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">Classes/AssassinateHUDViewController.h</string>
+						<string key="minorKey">Classes/ViewControllers/AssassinateHUDViewController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -656,18 +697,20 @@
 			<integer value="3000" key="NS.object.0"/>
 		</object>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
-		<string key="IBDocument.LastKnownRelativeProjectPath">../Assassins.xcodeproj</string>
+		<string key="IBDocument.LastKnownRelativeProjectPath">../../Assassins.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<bool key="EncodedWithXMLCoder">YES</bool>
 			<object class="NSArray" key="dict.sortedKeys">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>Default.png</string>
+				<string>RayGun.png</string>
 				<string>crosshairs.png</string>
 			</object>
 			<object class="NSMutableArray" key="dict.values">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<string>{320, 480}</string>
+				<string>{348, 322}</string>
 				<string>{670, 669}</string>
 			</object>
 		</object>

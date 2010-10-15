@@ -32,6 +32,7 @@
 		C76E6EFD1266CA0700B48793 /* ImageHelper-ImageProcessing.m in Sources */ = {isa = PBXBuildFile; fileRef = C76E6EFA1266CA0700B48793 /* ImageHelper-ImageProcessing.m */; };
 		C76E6EFE1266CA0700B48793 /* ImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C76E6EFC1266CA0700B48793 /* ImageHelper.m */; };
 		C76E6F021266CA5900B48793 /* RayGun.m in Sources */ = {isa = PBXBuildFile; fileRef = C76E6F001266CA5900B48793 /* RayGun.m */; };
+		C773333B1267ED4300A68538 /* RayKillOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = C773333A1267ED4300A68538 /* RayKillOverlay.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		C76E6EFF1266CA5900B48793 /* RayGun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RayGun.h; path = Models/Weapons/RayGun.h; sourceTree = "<group>"; };
 		C76E6F001266CA5900B48793 /* RayGun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RayGun.m; path = Models/Weapons/RayGun.m; sourceTree = "<group>"; };
 		C76E6F011266CA5900B48793 /* Weapon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Weapon.h; path = Models/Weapons/Weapon.h; sourceTree = "<group>"; };
+		C773333A1267ED4300A68538 /* RayKillOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RayKillOverlay.png; path = Images/Weapons/RayGun/RayKillOverlay.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 		C71E4A38126382AF00670FFC /* RayGun */ = {
 			isa = PBXGroup;
 			children = (
+				C773333A1267ED4300A68538 /* RayKillOverlay.png */,
 				C700658D1264361100228EA8 /* RayAttack1.png */,
 				C700658E1264361100228EA8 /* RayAttack2.png */,
 				C700658F1264361100228EA8 /* RayAttack3.png */,
@@ -296,6 +299,7 @@
 				C70065991264361100228EA8 /* RayAttack6.png in Resources */,
 				C700659A1264361100228EA8 /* RayAttack7.png in Resources */,
 				C76E6EF81266C94300B48793 /* AssassinateHUDViewController.xib in Resources */,
+				C773333B1267ED4300A68538 /* RayKillOverlay.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,18 +16,22 @@
 	UIImageView *targetPhotoView;
 	UIImageView *weaponView;
 	UIImageView *attackImageView;
-	
+	UIImageView *killView;
 	BOOL isTargetLocked;
 	
 	UIImage *targetImage;
 	
 	NSArray *weapons;
 	id<Weapon> currentWeapon;
+	
+	//Temp variable for tracking attack count.  move to game model in future
+	int tmpAttackCount;
 }
 @property (nonatomic, retain) IBOutlet UIView *overlay;
 @property (nonatomic, retain) IBOutlet UIImageView *targetPhotoView;
 @property (nonatomic, retain) IBOutlet UIImageView *weaponView;
 @property (nonatomic, retain) IBOutlet UIImageView *attackImageView;
+@property (nonatomic, retain) IBOutlet UIImageView *killView;
 
 @property (nonatomic, retain) UIImage *targetImage;
 

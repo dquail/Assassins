@@ -11,7 +11,7 @@
 
 @implementation RayGun
 
-@synthesize image, attackImages, killImages;
+@synthesize image, attackImages, killImages, killOverlayImage;
 
 - (id) init{
 	if (self = [super init]){
@@ -26,6 +26,7 @@
 								  [UIImage imageNamed:@"RayAttack6.png"],	
 								  [UIImage imageNamed:@"RayAttack7.png"],
 								  nil];
+		self.killOverlayImage = [UIImage imageNamed:@"RayKillOverlay.png"];
 	}
 	return self;
 					  

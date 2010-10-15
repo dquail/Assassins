@@ -20,6 +20,9 @@
 //The array of images to animate during kill
 @property (nonatomic, retain) NSArray *killImages;
 
+//The image to overlay after kill is done
+@property (nonatomic, retain) UIImage *killOverlayImage;
+
 //This edits the image with the weapons kill effect
 - (UIImage*) finishAttack:(UIImage *)image;
 

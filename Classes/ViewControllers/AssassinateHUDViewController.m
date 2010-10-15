@@ -14,7 +14,7 @@
 
 @implementation AssassinateHUDViewController
 
-@synthesize targetPhotoView, overlay, targetImage, weaponView, attackImageView;
+@synthesize targetPhotoView, overlay, targetImage, weaponView, attackImageView, killView;
 #pragma mark -
 #pragma mark ViewController lifecycle
 
@@ -22,6 +22,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
 		//TODO - Set all the weapons, not just the current weapon.
+		tmpAttackCount =0;
 		currentWeapon = [[RayGun alloc] init];
 		self.weaponView.image = currentWeapon.image;
     }
@@ -34,19 +35,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];	
 	
-	//Hide the weapon so it doesn't flash visible while camera is being loaded
-	self.weaponView.alpha = 0.0;	
-	self.weaponView.image = currentWeapon.image;	
-	
-	camera  = [[UIImagePickerController alloc] init];
-	camera.sourceType =  UIImagePickerControllerSourceTypeCamera;
-	camera.delegate = self;
-	camera.allowsEditing = NO;
-	camera.showsCameraControls = NO;
-	camera.toolbarHidden = YES;
-	camera.wantsFullScreenLayout = YES;
-	camera.cameraOverlayView = self.overlay;
-
+	targetPhotoView.image = self.targetImage;
+	if(!isTargetLocked){
+		//Hide the weapon so it doesn't flash visible while camera is being loaded
+		self.weaponView.alpha = 0.0;	
+		self.weaponView.image = currentWeapon.image;			
+		camera  = [[UIImagePickerController alloc] init];
+		camera.sourceType =  UIImagePickerControllerSourceTypeCamera;
+		camera.delegate = self;
+		camera.allowsEditing = NO;
+		camera.showsCameraControls = NO;
+		camera.toolbarHidden = YES;
+		camera.wantsFullScreenLayout = YES;
+		camera.cameraOverlayView = self.overlay;
+	}
 }
 
 - (void) viewDidAppear:(BOOL)animated{
@@ -130,16 +132,20 @@
 	//Triggering finishAttack will have to be based on the success of the attack.
 	//For now, we'll just manually finish the Attack after the first attack attempt
 	
+	tmpAttackCount++;
+	
 	self.attackImageView.animationImages = currentWeapon.attackImages;
 	self.attackImageView.animationDuration = 0.5f;
 	self.attackImageView.animationRepeatCount = 2;
 	[self.attackImageView startAnimating];
 	
-	//[self finishAttack];
+	if (tmpAttackCount > 5)
+		[self finishAttack];
 }
 
 - (void) finishAttack{
-	self.targetPhotoView.image = [currentWeapon finishAttack:self.targetImage];
+	//self.targetPhotoView.image = [currentWeapon finishAttack:self.targetImage];
+	self.killView.image = currentWeapon.killOverlayImage;
 	[self.view setNeedsDisplay];	
 }
 
