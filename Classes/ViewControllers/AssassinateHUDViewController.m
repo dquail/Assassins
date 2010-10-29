@@ -38,7 +38,7 @@
 	targetPhotoView.image = self.targetImage;
 	if(!isTargetLocked){
 		//Hide the weapon so it doesn't flash visible while camera is being loaded
-		self.weaponView.alpha = 0.0;	
+		//self.weaponView.alpha = 0.0;	
 		self.weaponView.image = currentWeapon.image;			
 		camera  = [[UIImagePickerController alloc] init];
 		camera.sourceType =  UIImagePickerControllerSourceTypeCamera;
@@ -113,8 +113,8 @@
 	self.targetPhotoView.image = self.targetImage;
 	self.weaponView.alpha = 1.0;
 	
-	[self.view setNeedsDisplay];
 	isTargetLocked = YES;
+	[self.view setNeedsDisplay];
 	[self dismissModalViewControllerAnimated:YES];
 	//UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 }
