@@ -7,9 +7,13 @@
 //
 
 #import "AssassinateHUDViewController.h"
+#import "UIImage+Combine.h"
+
+CGImageRef UIGetScreenImage(void);
 
 @interface AssassinateHUDViewController (Private)
 - (void) onChangeWeapon:(id<Weapon>) weapon;
+- (void) captureScreen;
 @end
 
 @implementation AssassinateHUDViewController
@@ -100,10 +104,21 @@
 #pragma mark UIImagePickerController delegate
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo; 
 {
-	if (!error) 
-		NSLog(@"Image written to photo album");
-	else
-		NSLog(@"Error writing to photo album: %@", [error localizedDescription]);
+	UIAlertView *alert;
+	
+	// Unable to save the image  
+	if (error)
+		alert = [[UIAlertView alloc] initWithTitle:@"Error" 
+										   message:@"Unable to save image to Photo Album." 
+										  delegate:self cancelButtonTitle:@"Ok" 
+								 otherButtonTitles:nil];
+	else // All is well
+		alert = [[UIAlertView alloc] initWithTitle:@"Success" 
+										   message:@"Image saved to Photo Album." 
+										  delegate:self cancelButtonTitle:@"Ok" 
+								 otherButtonTitles:nil];
+	[alert show];
+	[alert release];
 	self.overlay.alpha = 1.0f;
 }
 
@@ -138,7 +153,7 @@
 	self.attackImageView.animationDuration = 0.5f;
 	self.attackImageView.animationRepeatCount = 2;
 	[self.attackImageView startAnimating];
-	
+
 	if (tmpAttackCount > 5)
 		[self finishAttack];
 }
@@ -146,9 +161,21 @@
 - (void) finishAttack{
 	//self.targetPhotoView.image = [currentWeapon finishAttack:self.targetImage];
 	self.killView.image = currentWeapon.killOverlayImage;
+	
 	[self.view setNeedsDisplay];	
+	UIImage *killedImage = [[self.targetImage scaledToSize:self.killView.image.size] overlayWith:currentWeapon.killOverlayImage];
+	UIImageWriteToSavedPhotosAlbum(killedImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);		
 }
 
+- (void) captureScreen{
+	// Capture screen here...
+	CGImageRef screen = UIGetScreenImage();
+	UIImage* image = [UIImage imageWithCGImage:screen];
+	CGImageRelease(screen);	
+	
+	// Save the captured image to photo album
+	UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);		
+}
 #pragma mark -
 #pragma mark Menu callbacks
 - (void) onChangeWeapon:(id<Weapon>) weapon{
