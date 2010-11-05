@@ -7,59 +7,41 @@
 //
 
 #import "AssassinateHUDViewController.h"
-#import "UIImage+Combine.h"
-
-CGImageRef UIGetScreenImage(void);
-
-@interface AssassinateHUDViewController (Private)
-- (void) onChangeWeapon:(id<Weapon>) weapon;
-- (void) captureScreen;
-@end
+#import "AttackViewController.h"
 
 @implementation AssassinateHUDViewController
 
-@synthesize targetPhotoView, overlay, targetImage, weaponView, attackImageView, killView;
+@synthesize targetImage, overlay;
+
 #pragma mark -
 #pragma mark ViewController lifecycle
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-		//TODO - Set all the weapons, not just the current weapon.
-		tmpAttackCount =0;
-		currentWeapon = [[RayGun alloc] init];
-		self.weaponView.image = currentWeapon.image;
     }
     return self;
 }
-
-
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];	
 	
-	targetPhotoView.image = self.targetImage;
-	if(!isTargetLocked){
-		//Hide the weapon so it doesn't flash visible while camera is being loaded
-		//self.weaponView.alpha = 0.0;	
-		self.weaponView.image = currentWeapon.image;			
-		camera  = [[UIImagePickerController alloc] init];
-		camera.sourceType =  UIImagePickerControllerSourceTypeCamera;
-		camera.delegate = self;
-		camera.allowsEditing = NO;
-		camera.showsCameraControls = NO;
-		camera.toolbarHidden = YES;
-		camera.wantsFullScreenLayout = YES;
-		camera.cameraOverlayView = self.overlay;
-	}
+	camera  = [[UIImagePickerController alloc] init];
+	camera.sourceType =  UIImagePickerControllerSourceTypeCamera;
+	camera.delegate = self;
+	camera.allowsEditing = NO;
+	camera.showsCameraControls = NO;
+	camera.toolbarHidden = YES;
+	camera.wantsFullScreenLayout = YES;
+	camera.cameraOverlayView = self.overlay;
+
 }
 
 - (void) viewDidAppear:(BOOL)animated{
 	
 	[super viewDidAppear:animated];
-	if (!isTargetLocked)
-		[self presentModalViewController:camera animated:YES];
+	[self presentModalViewController:camera animated:YES];
 	
 }
 /*
@@ -87,16 +69,11 @@ CGImageRef UIGetScreenImage(void);
 - (void)dealloc {
     [super dealloc];
 	[camera release];
-	[overlay release];
-	[targetImage release]; 
-	[weaponView release]; 
-	[attackImageView release];	
 }
 
 #pragma mark CameraOverlay callbacks 
 - (IBAction) onLockTarget{
 	//Take a photo of the target.  
-	self.overlay.alpha = 0.0f;
 	[camera takePicture];
 }
 
@@ -125,62 +102,11 @@ CGImageRef UIGetScreenImage(void);
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
 	self.targetImage = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-	self.targetPhotoView.image = self.targetImage;
-	self.weaponView.alpha = 1.0;
 	
-	isTargetLocked = YES;
-	[self.view setNeedsDisplay];
-	[self dismissModalViewControllerAnimated:YES];
-	//UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+	AttackViewController *attackController = [[AttackViewController alloc] initWithTargetImage:self.targetImage];
+	[self.view removeFromSuperview];
+	[[[UIApplication sharedApplication] keyWindow] addSubview:attackController.view];
+	
 }
 
-#pragma mark - 
-#pragma mark Attack callbacks
-
-- (IBAction) onAttackButtonPressed{
-	[self attack];
-}
-
-- (void) attack{
-
-	
-	//Triggering finishAttack will have to be based on the success of the attack.
-	//For now, we'll just manually finish the Attack after the first attack attempt
-	
-	tmpAttackCount++;
-	
-	self.attackImageView.animationImages = currentWeapon.attackImages;
-	self.attackImageView.animationDuration = 0.5f;
-	self.attackImageView.animationRepeatCount = 2;
-	[self.attackImageView startAnimating];
-
-	if (tmpAttackCount > 5)
-		[self finishAttack];
-}
-
-- (void) finishAttack{
-	//self.targetPhotoView.image = [currentWeapon finishAttack:self.targetImage];
-	self.killView.image = currentWeapon.killOverlayImage;
-	
-	[self.view setNeedsDisplay];	
-	UIImage *killedImage = [[self.targetImage scaledToSize:self.killView.image.size] overlayWith:currentWeapon.killOverlayImage];
-	UIImageWriteToSavedPhotosAlbum(killedImage, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);		
-}
-
-- (void) captureScreen{
-	// Capture screen here...
-	CGImageRef screen = UIGetScreenImage();
-	UIImage* image = [UIImage imageWithCGImage:screen];
-	CGImageRelease(screen);	
-	
-	// Save the captured image to photo album
-	UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);		
-}
-#pragma mark -
-#pragma mark Menu callbacks
-- (void) onChangeWeapon:(id<Weapon>) weapon{
-	currentWeapon = weapon;
-	self.weaponView.image = currentWeapon.image;
-	[self.view setNeedsDisplay];
-}
 @end
