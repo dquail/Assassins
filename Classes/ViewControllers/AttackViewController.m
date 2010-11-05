@@ -24,18 +24,18 @@
 	slapClips = [[SoundClipPool alloc] init];
 	
 	NSString *slapURLs[] = {
-		@"sounds/slap.caf",
-		@"sounds/slap7.caf",
-		@"sounds/slap2.caf",
-		@"sounds/slap3.caf",
-		@"sounds/slap6.caf",
-		@"sounds/slap4.caf",
-		@"sounds/slap5.caf",
+		@"slap.caf",
+		@"slap7.caf",
+		@"slap2.caf",
+		@"slap3.caf",
+		@"slap6.caf",
+		@"slap4.caf",
+		@"slap5.caf",
 	};
 	
 	for (int i = 0; i < (sizeof(slapURLs) / sizeof(slapURLs[0])); i++) {
 		NSURL *slapURL = [[[NSBundle mainBundle] bundleURL] URLByAppendingPathComponent: slapURLs[i]];
-		
+		NSLog(@"Slap Url: %@", slapURL);
 		AVAudioPlayer *slapSound = [[AVAudioPlayer alloc] initWithContentsOfURL: slapURL error: NULL];
 		[slapClips addSoundClip: slapSound];
 	}
@@ -46,17 +46,17 @@
 	responseClips.delegate = self;
 	
 	NSString *responseURLs[] = {
-		@"sounds/oof.caf",
-		@"sounds/uhh.caf",
-		@"sounds/ah.caf",
-		@"sounds/thathurts.caf",
-		@"sounds/hey.caf",
-		@"sounds/ow.caf",
-		@"sounds/stop.caf",
-		@"sounds/stopit.caf",
-		@"sounds/whatthehell.caf",
-		@"sounds/isthatachicken.caf",
-//		@"sounds/threat.caf",
+		@"oof.caf",
+		@"uhh.caf",
+		@"ah.caf",
+		@"thathurts.caf",
+		@"hey.caf",
+		@"ow.caf",
+		@"stop.caf",
+		@"stopit.caf",
+		@"whatthehell.caf",
+		@"isthatachicken.caf",
+//		@"threat.caf",
 	};
 	
 	for (int i = 0; i < (sizeof(responseURLs) / sizeof(responseURLs[0])); i++) {
