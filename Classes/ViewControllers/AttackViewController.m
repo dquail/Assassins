@@ -112,21 +112,31 @@
 */
 
 - (void) slap {
-	//TODO - Temporray solution to finish an attack after 10 slaps
-	if (slapCount++ > 10){
-		AttackCompletedViewController *completedController = [[AttackCompletedViewController alloc] initWithTargetImage:targetImage];
+	//TODO - Temporray solution to finish an attack after 10 slaps.  
+	// also need to manage these view controllers through appdelegate
+	
+	if (++slapCount == 10){
+		[UIView beginAnimations:nil context:nil];
+		[UIView setAnimationDuration:1];
+		[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:[[UIApplication sharedApplication] keyWindow] cache:YES];
 		[self.view removeFromSuperview];
+		AttackCompletedViewController *completedController = [[AttackCompletedViewController alloc] initWithTargetImage:targetImage];
 		[[[UIApplication sharedApplication] keyWindow] addSubview:completedController.view];
+		[UIView commitAnimations];		
 	}
-	double currentTime = CACurrentMediaTime();
-	if ((currentTime - lastSlapTime) >= 0.15) {
-		lastSlapTime = currentTime;
-		
-		[slapClips playRandomClip];
-		
-		if (!slapping) {
-			[responseClips playRandomClip];
-			slapping = YES;
+	else if(slapCount>10)
+		return;
+	else{
+		double currentTime = CACurrentMediaTime();
+		if ((currentTime - lastSlapTime) >= 0.15) {
+			lastSlapTime = currentTime;
+			
+			[slapClips playRandomClip];
+			
+			if (!slapping) {
+				[responseClips playRandomClip];
+				slapping = YES;
+			}
 		}
 	}
 }
